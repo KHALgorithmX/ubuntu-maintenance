@@ -40,14 +40,3 @@ source ~/.bashrc
 Once installed, you can typically run the maintenance routine by typing the command defined in `maintain.sh` (e.g., `maintain` or `update-sys`).
 
 > **Note:** Ensure you have sudo privileges, as system maintenance requires administrative access for updates and cleaning.
-
----
-
-### Improvements made:
-
-* **Added Context:** Users now know *what* the repo does before they run code.
-* **Step-by-Step Breakdown:** Using headers (`###`) makes the process less intimidating.
-* **Code Fences:** Proper syntax highlighting makes the commands easier to read and copy.
-* **Safety Note:** Added a blockquote regarding `sudo` permissions to manage user expectations.
-
-**Would you like me to help you write a "Features" section or a "Troubleshooting" guide to add to this file?**
