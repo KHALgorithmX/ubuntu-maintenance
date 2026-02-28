@@ -306,11 +306,13 @@ maintain() {
     else
         _skip "Maven local repo not found."
     fi
+    
     _section "Gradle caches (build daemons + old distributions)"
     if [ -d "${HOME}/.gradle" ]; then
-        _run rm -rf "${HOME}/.gradle/caches/build-cache-"*
-        _run rm -rf "${HOME}/.gradle/daemon"
-        _run rm -rf "${HOME}/.gradle/wrapper/dists"
+        find "${HOME}/.gradle/caches" -maxdepth 1 -name "build-cache-*" \
+            -exec rm -rf {} + 2>/dev/null || true
+        [ -d "${HOME}/.gradle/daemon" ]        && rm -rf "${HOME}/.gradle/daemon"
+        [ -d "${HOME}/.gradle/wrapper/dists" ] && rm -rf "${HOME}/.gradle/wrapper/dists"
         _ok "Gradle cache cleaned."
     else
         _skip "Gradle home not found."
